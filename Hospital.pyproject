@@ -1,0 +1,14 @@
+{
+    "files": [
+        "main.py",
+        "main.qml",
+        "basic/TransparentRect.qml",
+        "basic/button.qml",
+        "basic/qmldir",
+        "basic/table.qml",
+        "front/StartPanel.qml",
+        "LeftPanel.qml",
+        "RightPanel.qml",
+        "MainPanel.qml"
+    ]
+}

@@ -1,5 +1,0 @@
-[project]
-name = "Hosoital_Project"
-
-[tool.pyside6-project]
-files = ["front/StartPanel.qml", "main.py", "main.qml"]
