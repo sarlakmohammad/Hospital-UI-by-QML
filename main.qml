@@ -1,18 +1,25 @@
 import QtQuick
-import QtQuick.Window
 import QtQuick.Layouts
+import QtQuick.Controls.Basic
+import Qt5Compat.GraphicalEffects
+import "basic"
 import "front" as MyComponents
 
-Window {
-    property color backgroundColor: "#136e71"
-    property double ratio: 64 / 36
+ApplicationWindow {
+    property color backgroundColor: "#138e71"
+    property double ratio: 64 / 38
 
     id: root
     visible: true
     minimumWidth: 640
-    minimumHeight: 360
+    minimumHeight: 380
     visibility: Window.Maximized
-    color: backgroundColor
+    // customizing the background
+    Image{
+        anchors.fill: parent
+        source: "pics/Back.jpg"
+        fillMode: Image.PreserveAspectCrop
+    }
 
     GridLayout{
         id: ui
@@ -23,79 +30,93 @@ Window {
         columnSpacing: 0
 
         // row 1
-        Rectangle{
+        TransparentRect{
             Layout.rowSpan: 10
             Layout.preferredWidth: 3
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.rowSpan: 2
             Layout.preferredHeight: 6
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.rowSpan: 10
             Layout.preferredWidth: 3
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
         //// pic
-        Rectangle{
+        Item{
             Layout.rowSpan: 5
             Layout.preferredHeight: 25
-            Layout.preferredWidth: 36
+            Layout.preferredWidth: 38
             Layout.fillWidth: true
             Layout.fillHeight: true
-            // clip: true
-            // radius: 25
 
             Image {
+                id: img
                 anchors.fill: parent
                 source: "pics/pic.png"
                 fillMode: Image.PreserveAspectCrop
+                visible: false
             }
+
+            Rectangle {
+                id: mask
+                anchors.fill: parent
+                color: "black"
+                radius: 33
+                topLeftRadius: 0
+                topRightRadius: 0
+                antialiasing: true
+                visible: false
+            }
+
+            OpacityMask {
+                anchors.fill: parent
+                source: img
+                maskSource: mask
+                invert: false
+                anchors.bottomMargin: 15
+                anchors.rightMargin: 2
+            }
+
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.rowSpan: 10
             Layout.preferredWidth: 3
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 4
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.rowSpan: 10
             Layout.preferredWidth: 3
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
         // row 2
         //// BOOBARS
-        Rectangle{
+        TransparentRect{
             Layout.preferredWidth: 8
             Layout.preferredHeight: 2
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
 
             Image {
                 source: "pics/logo(white).png"
@@ -106,17 +127,16 @@ Window {
 
         // row 3
         //// panel(start)
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 15
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
 
             MyComponents.StartPanel{}
         }
         //// panel(clock)
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 15
             Layout.preferredWidth: 8
             Layout.fillWidth: true
@@ -124,25 +144,23 @@ Window {
             color: "#CCFFCC"
         }
         // row 4
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 1
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 1
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
         // row 5
         //// END SURGURY BUTTON
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 3
             Layout.preferredWidth: 8
             Layout.fillWidth: true
@@ -150,7 +168,7 @@ Window {
             color: "#FF0000"
         }
         //// POWER BUTTON
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 3
             Layout.preferredWidth: 8
             Layout.fillWidth: true
@@ -158,51 +176,47 @@ Window {
             color: "#FF0000"
         }
         // row 6
-        Rectangle{
+        TransparentRect{
             Layout.rowSpan: 3
             Layout.preferredHeight: 5
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 1
-            Layout.preferredWidth: 36
+            Layout.preferredWidth: 38
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.rowSpan: 3
             Layout.preferredHeight: 5
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
         // row 7
         //// PACS,HIS
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 3
-            Layout.preferredWidth: 36
+            Layout.preferredWidth: 38
             Layout.fillWidth: true
             Layout.fillHeight: true
             color: "#0066CC"
         }
         // row 8
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 1
-            Layout.preferredWidth: 36
+            Layout.preferredWidth: 38
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
         // row 9
         //// PREVIOS
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 4
             Layout.preferredWidth: 8
             Layout.fillWidth: true
@@ -210,15 +224,15 @@ Window {
             color: "#FFFFCC"
         }
         //// ROUTING,CONFFERENCE,ARCHIVE
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 4
-            Layout.preferredWidth: 36
+            Layout.preferredWidth: 38
             Layout.fillWidth: true
             Layout.fillHeight: true
             color: "#CCE5FF"
         }
         //// NEXT
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 4
             Layout.preferredWidth: 8
             Layout.fillWidth: true
@@ -226,28 +240,25 @@ Window {
             color: "#FFFFCC"
         }
         // row 10
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 2
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 2
-            Layout.preferredWidth: 36
+            Layout.preferredWidth: 38
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
 
-        Rectangle{
+        TransparentRect{
             Layout.preferredHeight: 2
             Layout.preferredWidth: 8
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: backgroundColor
         }
     }
 }
