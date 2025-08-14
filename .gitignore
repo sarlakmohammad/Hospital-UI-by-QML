@@ -209,3 +209,4 @@ __marimo__/
 ####################
 .qtcreator
 *.pyproject.user
+test.qml

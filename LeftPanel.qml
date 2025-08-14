@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import "front_LeftPanel"
 
 Item {
     id: left_panel
@@ -9,36 +10,32 @@ Item {
         spacing: left_panel.height*0.01
 
         Item { Layout.fillHeight: true }
-        Rectangle {
-            id: reset
+        ResetBut {
             Layout.fillWidth: true
-            Layout.preferredHeight: left_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: left_panel.height*0.05
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
         }
-        Rectangle {
-            id: start_and_pause_table
+        StartTable {
             Layout.fillWidth: true
-            Layout.preferredHeight: left_panel.height*0.3
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: left_panel.height*0.33
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
+            Layout.topMargin: parent.height*0.03
+            Layout.bottomMargin: parent.height*0.02
         }
-        Rectangle {
-            id: end_surery
+        EndSurgeryBut {
             Layout.fillWidth: true
-            Layout.preferredHeight: left_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: left_panel.height*0.08
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
         }
         Item { Layout.fillHeight: true }
         RowLayout {
             Item { Layout.fillWidth: true }
-            Rectangle {
-                id: back_itm
+            BackBut {
                 Layout.preferredWidth: 40
                 Layout.preferredHeight: 40
-                color: "transparent"
-                border.width: 2
             }
             Item { Layout.fillWidth: true }
         }
