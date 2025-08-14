@@ -13,7 +13,8 @@ Item {
             id: frame_viewer
             Layout.fillWidth: true
             // Layout.fillHeight: true
-            Layout.preferredHeight: main_panel.height*0.56
+            Layout.preferredHeight: main_panel.height*0.65
+            anchors.top: parent.top
             color: "transparent"
 
             Image {

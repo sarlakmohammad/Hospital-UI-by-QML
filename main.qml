@@ -5,14 +5,11 @@ import QtQuick.Layouts
 Window {
     id: root
     visible: true
-    width: 640
+    width: 840
     height: 480
-    minimumWidth: 640
+    minimumWidth: 840
     minimumHeight: 480
     // visibility: Window.FullScreen // Minimized, Maximized, FullScreen
-
-    property color backgroundColor: "#138e71"
-    property double ratio: 64 / 38
 
     // Maximized need a small delay in ms
     Timer {
@@ -20,6 +17,11 @@ Window {
         interval: 10
         onTriggered: root.visibility = Window.Maximized
     }
+
+    //properties
+    property color backgroundColor: "#138e71"
+    property double ratio: 84 / 48
+
 
     Rectangle {
         id: background
