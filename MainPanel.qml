@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import "front_MainPanel"
 
 Item {
     id: main_panel
@@ -11,7 +12,8 @@ Item {
         Rectangle {
             id: frame_viewer
             Layout.fillWidth: true
-            Layout.fillHeight: true
+            // Layout.fillHeight: true
+            Layout.preferredHeight: main_panel.height*0.56
             color: "transparent"
 
             Image {
@@ -22,20 +24,16 @@ Item {
             }
         }
 
-        Rectangle {
-            id: pacs_and_his_table
+        PacsHis {
             Layout.fillWidth: true
-            Layout.preferredHeight: main_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: main_panel.height*0.1
+            Layout.topMargin: main_panel.height*0.03
         }
-        Rectangle {
-            id: routing_conference_archiving_table
+        RoutingConferenceArchiving {
             Layout.fillWidth: true
-            Layout.preferredHeight: main_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: main_panel.height*0.1
+            Layout.topMargin: main_panel.height*0.03
         }
-        Item { Layout.preferredHeight: main_panel.height*0.14 }
+        Item { Layout.preferredHeight: main_panel.height*0.07 }
     }
 }

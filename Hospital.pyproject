@@ -18,6 +18,8 @@
         "front_RightPanel/NegatoScope.qml",
         "front_RightPanel/NotesResault.qml",
         "front_RightPanel/PowerBut.qml",
-        "front_RightPanel/NextBut.qml"
+        "front_RightPanel/NextBut.qml",
+        "front_MainPanel/PacsHis.qml",
+        "front_MainPanel/RoutingConferenceArchiving.qml"
     ]
 }
