@@ -6,9 +6,18 @@
         "basic/button.qml",
         "basic/qmldir",
         "basic/table.qml",
-        "front/StartPanel.qml",
+        "front_LeftPanel/ResetBut.qml",
         "LeftPanel.qml",
         "RightPanel.qml",
-        "MainPanel.qml"
+        "MainPanel.qml",
+        "front_LeftPanel/StartTable.qml",
+        "front_LeftPanel/EndSurgeryBut.qml",
+        "front_LeftPanel/BackBut.qml",
+        "front_RightPanel/Clock.qml",
+        "front_RightPanel/Date.qml",
+        "front_RightPanel/NegatoScope.qml",
+        "front_RightPanel/NotesResault.qml",
+        "front_RightPanel/PowerBut.qml",
+        "front_RightPanel/NextBut.qml"
     ]
 }
