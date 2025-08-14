@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import "front_RightPanel"
 
 Item {
     id: right_panel
@@ -12,54 +13,62 @@ Item {
         Rectangle {
             id: company
             Layout.fillWidth: true
-            Layout.preferredHeight: right_panel.height*0.07
+            Layout.preferredHeight: right_panel.height*0.04
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
             color: "transparent"
-            border.width: 2
+
+            BorderImage {
+                anchors.fill: parent
+                source: "pics/logo.png"
+                antialiasing: true
+                cache: true
+                border{
+                    left: 1; right: 1; top: 1; bottom: 1
+                }
+            }
         }
-        Rectangle {
-            id: clock
+        Clock {
             Layout.fillWidth: true
-            Layout.preferredHeight: right_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: right_panel.height*0.09
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
+            Layout.topMargin: parent.height*0.02
         }
-        Rectangle {
-            id: date_icon
+        Date {
             Layout.fillWidth: true
-            Layout.preferredHeight: right_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: right_panel.height*0.09
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
+            Layout.topMargin: parent.height*0.02
         }
-        Rectangle {
-            id: negatoscope
+        NegatoScope {
             Layout.fillWidth: true
-            Layout.preferredHeight: right_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: right_panel.height*0.08
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
+            Layout.topMargin: parent.height*0.02
         }
-        Rectangle {
-            id: notes_result
+        NotesResault {
             Layout.fillWidth: true
-            Layout.preferredHeight: right_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: right_panel.height*0.08
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
+            Layout.topMargin: parent.height*0.02
         }
-        Rectangle {
-            id: power
+        PowerBut {
             Layout.fillWidth: true
-            Layout.preferredHeight: right_panel.height*0.07
-            color: "transparent"
-            border.width: 2
+            Layout.preferredHeight: right_panel.height*0.08
+            Layout.leftMargin: parent.width*0.2
+            Layout.rightMargin: parent.width*0.2
+            Layout.topMargin: parent.height*0.02
         }
-        Item { Layout.fillHeight: true }
+        Item { Layout.preferredHeight: right_panel.height*0.12 }
         RowLayout {
             Item { Layout.fillWidth: true }
-            Rectangle {
-                id: back_itm
+            NextBut {
                 Layout.preferredWidth: 40
                 Layout.preferredHeight: 40
-                color: "transparent"
-                border.width: 2
             }
             Item { Layout.fillWidth: true }
         }
