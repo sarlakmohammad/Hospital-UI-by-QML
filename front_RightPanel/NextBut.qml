@@ -4,9 +4,9 @@ Rectangle{
     id: back_but
     color: "transparent"
 
-    property url normalSource:  "../pics/Icons/L_Back.png"
-    property url hoverSource:   "../pics/Icons/L_Back_Hover.png"
-    property url pressedSource: "../pics/Icons/L_Back_Pressed.png"
+    property url normalSource:  "../pics/Icons/R_Next.png"
+    property url hoverSource:   "../pics/Icons/R_Next_Hover.png"
+    property url pressedSource: "../pics/Icons/R_Next_Pressed.png"
 
     MouseArea {
         id: mouseArea

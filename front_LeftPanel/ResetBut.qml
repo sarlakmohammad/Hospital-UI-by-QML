@@ -8,12 +8,12 @@ Rectangle{
 
     radius: 3
     color: normalColor
-    border.width: 2
 
     BorderImage{
         anchors.fill: parent
         source: "../pics/Icons/L_Reset.png"
         cache: true
+        antialiasing: true
         border{
             left: 1; right: 1; top: 1; bottom: 1
         }

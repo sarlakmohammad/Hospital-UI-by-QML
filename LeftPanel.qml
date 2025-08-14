@@ -30,7 +30,7 @@ Item {
             Layout.leftMargin: parent.width*0.2
             Layout.rightMargin: parent.width*0.2
         }
-        Item { Layout.fillHeight: true }
+        Item { Layout.preferredHeight: left_panel.height*0.12 }
         RowLayout {
             Item { Layout.fillWidth: true }
             BackBut {
