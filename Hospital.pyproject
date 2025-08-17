@@ -2,10 +2,6 @@
     "files": [
         "main.py",
         "main.qml",
-        "basic/TransparentRect.qml",
-        "basic/button.qml",
-        "basic/qmldir",
-        "basic/table.qml",
         "front_LeftPanel/ResetBut.qml",
         "LeftPanel.qml",
         "RightPanel.qml",
@@ -20,6 +16,7 @@
         "front_RightPanel/PowerBut.qml",
         "front_RightPanel/NextBut.qml",
         "front_MainPanel/PacsHis.qml",
-        "front_MainPanel/RoutingConferenceArchiving.qml"
+        "front_MainPanel/RoutingConferenceArchiving.qml",
+        "back/date.py"
     ]
 }

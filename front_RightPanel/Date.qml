@@ -15,6 +15,7 @@ Rectangle{
     }
 
     Text {
+        id: date_txt
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: parent.height * 0.08
@@ -22,5 +23,12 @@ Rectangle{
         font.pixelSize: parent.height * 0.33
         font.bold: true
         color: "white"
+    }
+
+    Connections{
+        target: showDate
+        function onDateChanged(newDate){
+            date_txt.text = newDate
+        }
     }
 }

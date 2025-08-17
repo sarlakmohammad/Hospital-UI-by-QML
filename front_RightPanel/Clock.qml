@@ -15,6 +15,7 @@ Rectangle{
     }
 
     Text {
+        id: time_txt
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: parent.height * 0.05
@@ -22,5 +23,12 @@ Rectangle{
         font.pixelSize: parent.height * 0.4
         font.bold: true
         color: "white"
+    }
+
+    Connections{
+        target: showDate
+        function onTimeChanged(newTime){
+            time_txt.text = newTime
+        }
     }
 }
